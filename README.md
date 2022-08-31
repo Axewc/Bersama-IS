@@ -1,7 +1,7 @@
 # Bersama-IS
 
 ## Miembros
-Fernanda
-Axel
-Fausto
-Orlando
+Fernanda \
+Axel \
+Fausto \
+Orlando \
