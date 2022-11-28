@@ -44,7 +44,7 @@ def login():
             error = 'Invalid Credentials. Please try again.'
         else:"""
         return redirect(url_for('home'))
-    return render_template('login.html', error=error)
+    return render_template('/home/fergbb/Documentos/Semestre7/Software/Proyecto/Bersama-IS/templates/html/login.html', error=error)
 
 @app.route("/", methods=['GET'])
 def home():
