@@ -1,0 +1,11 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}Reservations</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1></h1>
+  <ul>
+    {% if  session.get('reservation') != None %}
+      <li>Reservation value: <span>{{ session.get('reservation') }}</span>
+    {% endif %}
+  </ul>
+</nav>
