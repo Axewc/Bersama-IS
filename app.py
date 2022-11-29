@@ -10,7 +10,7 @@ app.register_blueprint(bp)
 app.register_blueprint(loginBlueprint)
 app.register_blueprint(logoutBlueprint)
 app.register_blueprint(view_reservations)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:210622@localhost:3306/prueba"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://USER:PASSWORD@localhost:3306/prueba"
 app.config.from_mapping(
     SECRET_KEY = 'dev'
 )
