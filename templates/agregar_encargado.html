@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class= container>
+    <h1> Agregar un Encargado</h1>
+
+    <form method= "POST">
+        {{ form.csrf_token }}
+
+        {{ form.nombre.label(class= "form-label") }}
+        {{ form.nombre(class= "form-control") }}
+
+        {{ form.apellidoPaterno.label(class= "form-label")  }}
+        {{ form.apellidoPaterno(class= "form-control") }}
+
+        {{ form.apellidoMaterno.label(class= "form-label")  }}
+        {{ form.apellidoMaterno(class= "form-control") }}
+
+        {{ form.correo.label(class= "form-label")   }}
+        {{ form.correo(class= "form-control") }}
+
+        {{ form.contrasena.label(class= "form-label")   }}
+        {{ form.contrasena(class= "form-control") }}
+
+        {{ form.confirmarContrasena.label(class= "form-label")   }}
+        {{ form.confirmarContrasena(class= "form-control") }}
+
+        {{ form.fechaNacimiento.label(class= "form-label")   }}
+        {{ form.fechaNacimiento(class= "form-control") }}
+
+        {{ form.idHostal.label(class= "form-label")   }}
+        {{ form.idHostal(class= "form-control") }}
+
+
+        <br>
+
+        {{ form.submit(class= "btn btn-primary") }}
+
+    </form>
+
+</div>
+
+{% endblock %}
