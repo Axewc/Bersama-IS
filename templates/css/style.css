@@ -582,7 +582,7 @@ button {
      z-index: 1; /* Stay on top */
      top: 0; /* Stay at the top */
      left: 0;
-     background-color: #BA94D1; /* Black */
+     background-color: #702963; 
      overflow-x: hidden; /* Disable horizontal scroll */
      padding-top: 20px;
    }
@@ -597,7 +597,7 @@ button {
    
    
 .sidenav a:hover {
-     color: #f1f1f1;
+     color: #FBFACD;
 }
 
 
