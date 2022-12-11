@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/registerStyle.css">
+    <!--Bootstrap CSS-->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body class="main-layout">
+<!-- loader  -->
+<div class="loader_bg">
+    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+</div>
+<!-- end loader -->
+<!--Formulario registro-->
+<div class="registro">
+<div class = "contenedorRegistro">
+    <img src="images/logo.png
+        " width="100" height="100" class="centerImg"/>
+    <form method="POST">
+        <h1>Registrarse</h1>
+        <label for="name"> Nombre<span>*</span></label>
+        <input id="name" type="text" name="Name" required> <br>
+        <label for="apellidop"> Apellido Paterno<span>*</span></label>
+        <input id="apellidop" type="text" name="apellidop" required><br>
+        <label for="apellidom">Apellido Materno<span>*</span></label>
+        <input id="apellidom" type="text" name="apellidom" required><br>
+        <label for="correo"> Correo<span>*</span></label>
+        <input id="correo" type="email" name="Correo electronico" required><br>
+        <label for="pass"> Contraseña<span>*</span></label>
+        <input id="pass" type="password" name="pass" required><br>
+        <label for="num"> Número de telefono<span>*</span></label>
+        <input id="num" type="text" name="num" required><br>
+        <label for="fechaN">Fecha de nacimiento<span>*</span></label>
+        <input type="date" id="fechaN" name="fechaN"><br> <br>
+        <button type="submit" class="btn btn-primary mb-2"href="/">Registrarse</button>
+    </form>
+</div>
+</div>
+<!--  footer -->
+<footer id="contact">
+    <div class="footer">
+       <div class="copyright">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-12">
+                   <p>Copyright 2022 All Right Reserved By <a href="#"> Bersama Enterprises</a></p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
+ <!-- end footer -->
+ <!-- Javascript files-->
+ <script src="js/jquery.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.bundle.min.js"></script>
+ <script src="js/jquery-3.0.0.min.js"></script>
+ <script src="js/plugin.js"></script>
+ <!-- sidebar -->
+ <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+ <script src="js/custom.js"></script>
+ <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+</body>
+</html>
