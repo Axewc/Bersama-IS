@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class= container>
+    <h1> Resultados de la busqueda</h1>
+
+
+    <br/>
+
+    <div class="container text-center">
+
+
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido Paterno</th>
+                    <th scope="col">Apellido Materno</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Id de Hostal Asignado</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for usuario in usuarios %}
+                <tr>
+                    <td>
+                        {{usuario.idUsuario }}
+                    </td>
+                    <td>
+                        {{usuario.nombre }}
+                    </td>
+                    <td>
+                        {{usuario.apellidoPaterno}}
+                    </td>
+                    <td>
+                        {{usuario.apellidoMaterno}}
+                    </td>
+                    <td>
+                        {{usuario.correo}}
+                    </td>
+                    <td>
+                        {{usuario.fechaNacimiento}}
+                    </td>
+                    <td>
+                        {{usuario.idHostal}}
+                    </td>
+                    <td>
+                        <a role="button" href="{{ url_for('actualizar_encargado.show', idUsuario=usuario.idUsuario) }}" type="button" class="btn btn-primary">Actualizar</button>
+                    </td>
+                    <td>
+                        <a role="button" href="{{ url_for('eliminar_encargado.show', idUsuario=usuario.idUsuario) }}" type="button" class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
