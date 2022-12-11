@@ -1,0 +1,55 @@
+body {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(181, 181, 181, 0.8)), url('../login-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: linear-gradient(#7579FF, #B124EF);
+    height: auto;
+    width: 20%;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+input {
+    margin: 20px;
+    background-color: transparent;
+    color: #FFF;
+    border-color: #FFF;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: #FFF;
+}
+
+.btn {
+    display: block;
+    width: 75px;
+    margin: 20px auto;
+    background-color: #FFF;
+    color: #000;
+    border-bottom: 0;
+    border-radius: 40px;
+    padding: 10px;
+}
