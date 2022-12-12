@@ -1,13 +1,33 @@
-from flask import Flask, redirect, render_template, request, url_for
-from flask_sqlalchemy import SQLAlchemy
-from controller.HomeController import home
+from flask import Flask, render_template
+
+from .controller.HomeController import home
+from .controller.AgregarEncargadoController import agregar_encargado
+from .controller.ConsultarEncargadoController import consultar_encargado
+from .controller.ActualizarEncargadoController import actualizar_encargado
+from .controller.EliminarEncargadoController import eliminar_encargado
 
 
-#Configuraciones
-app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Fer110675#01@localhost:3306/prueba"
-SQLAlchemy(app)
+from .models.database import db
 
-app.register_blueprint(home)
+def create_app():
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = "SECRET_KEY"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/Hoteland"
+    
+    db.init_app(app)
+    with app.app_context():
+        db.create_all()
+
+    app.register_blueprint(home)
+    app.register_blueprint(agregar_encargado)
+    app.register_blueprint(consultar_encargado)
+    app.register_blueprint(actualizar_encargado)
+    app.register_blueprint(eliminar_encargado)
 
 
+    return app
+
+
+
+
+>>>>>>> actualizar-encargado
