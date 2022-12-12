@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class= container>
+    <h1> Eliminar un Encargado</h1>
+
+    <form method= "POST">
+        {{ form.csrf_token }}
+
+        {{ form.idEncargado.label(class= "form-label") }}
+        {{ form.idEncargado(class= "form-control") }}
+        
+        <br>
+
+        {{ form.submit(class= "btn btn-primary") }}
+
+    </form>
+
+</div>
+
+{% endblock %}
