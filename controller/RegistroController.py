@@ -1,34 +1,47 @@
-import functools
-from models.model_usuarios import obten_usuario
-from alchemyClasses.usuario import Usuario
-from flask import Blueprint, flash, g, redirect, render_template, request, url_for, session
-from werkzeug.security import check_password_hash, generate_password_hash
-from models.UsuarioModel import crear_usuario
+import hashlib
 
-registrerBlueprint = Blueprint('registro', __name__, url_prefix='/registro')
+from flask import Blueprint, flash, g, redirect, render_template, request, url_for, session
+from flask_wtf import FlaskForm
+from .RegistroHuesped import RegistroHuesped
+from ..models.UsuarioModel import insert_usuario, obten_usuario
+
+
+registro_bp = Blueprint('registro', __name__)
 
 # Registrar un usuario.
-@registrerBlueprint.route('/registro', methods=['GET', 'POST'])
+
+
+@registro_bp.route('/registro', methods=['GET', 'POST'])
 def registro():
+    nombre = None
+    apellidoPaterno = None
+    apellidoMaterno = None
+    correo = None
+    contrasena = None
+    fechaNacimiento = None
+    idHostal = None
     tipo = "huesped"
-    print(tipo)
-    if request.method == 'POST':
-        nombre = request.form['name']
-        apePat = request.form['apellidoPaterno']
-        apeMat = request.form['apellidoMaterno']
-        correo = request.form['correo']
-        password = request.form['hash']
-        fechaNac = request.form['fechaNacimiento']
 
-        print(nombre)
-        usuario = Usuario(nombre=nombre, apellidoPaterno=apePat, apellidoMaterno=apeMat, correo=correo, passHash=password, fechaNacimiento=fechaNac, tipo=tipo, idHostal=None)
-        error = None
-        user_name = obten_usuario(correo)
+    form = RegistroHuesped()
+    if form.validate_on_submit():
+        nombre = form.nombre.data
+        apellidoPaterno = form.apellidoPaterno.data
+        apellidoMaterno = form.apellidoMaterno.data
+        correo = form.correo.data
+        contrasena = form.contrasena.data
+        fechaNacimiento = form.fechaNacimiento.data
 
-        if user_name == None:
-            crear_usuario(usuario)
-            return redirect(url_for('huespedView.html'))
+        passhash = hashlib.sha256(contrasena.encode('utf-8')).hexdigest()
+
+        # if obten_usuario(correo) != None:
+        if insert_usuario(nombre, apellidoPaterno, apellidoMaterno, correo, passhash, fechaNacimiento, tipo, idHostal):
+            flash("Usuario registrado con exito")
+            return redirect(url_for('home.show'))
         else:
-            error = f'El usuario {nombre} ya esta registrado.'
+            flash("No se pudo actualizar la base de datos, intente mas tarde")
+        # else:
+           #flash('Datos erroneos, intente con otros')
 
-        return render_template('registro.html')
+    return render_template("registro.html", form=form)
+    
+    

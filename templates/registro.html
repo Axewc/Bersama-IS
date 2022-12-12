@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href='static/css/registerStyle.css'>
     <!--Bootstrap CSS-->
@@ -16,12 +10,53 @@
 </div>
 <!-- end loader -->
 <!--Formulario registro-->
+{% for mensaje in get_flashed_messages() %}
+
+
+<div class="alert alert-primary alert-dismissible fade show" role="alert">
+    {{ mensaje }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+
+{% endfor %}
 <div class="registro">
 <div class = "contenedorRegistro">
     <img src='static/images/logo.png' width="100" height="100" class="centerImg"/>
     <form method="POST">
         <h1>Registrarse</h1>
-        <label for="name"> Nombre<span>*</span></label>
+      
+        {{ form.csrf_token }}
+
+        {{ form.nombre.label(class= "form-label") }}
+        {{ form.nombre(class= "form-control", value=  nombre) }}
+
+        {{ form.apellidoPaterno.label(class= "form-label")  }}
+        {{ form.apellidoPaterno(class= "form-control", value=  apellidoPaterno) }}
+
+        {{ form.apellidoMaterno.label(class= "form-label")  }}
+        {{ form.apellidoMaterno(class= "form-control", value=  apellidoMaterno) }}
+
+        {{ form.correo.label(class= "form-label")   }}
+        {{ form.correo(class= "form-control", value=  correo) }}
+
+        {{ form.contrasena.label(class= "form-label")   }}
+        {{ form.contrasena(class= "form-control") }}
+
+        {{ form.fechaNacimiento.label(class= "form-label")   }}
+        {{ form.fechaNacimiento(class= "form-control", value=  fechaNacimiento) }}
+
+
+
+        <br>
+
+        {{ form.submit(class= "btn btn-primary") }}
+
+    </form>
+</div>
+</div>
+
+       <!-- <label for="name"> Nombre<span>*</span></label>
         <input id="name" type="text" name="Name" required> <br>
         <label for="apellidop"> Apellido Paterno<span>*</span></label>
         <input id="apellidop" type="text" name="apellidop" required><br>
@@ -31,14 +66,12 @@
         <input id="correo" type="email" name="Correo electronico" required><br>
         <label for="pass"> Contraseña<span>*</span></label>
         <input id="pass" type="password" name="pass" required><br>
-        <label for="num"> Número de telefono<span>*</span></label>
-        <input id="num" type="text" name="num" required><br>
         <label for="fechaN">Fecha de nacimiento<span>*</span></label>
         <input type="date" id="fechaN" name="fechaN"><br> <br>
         <button type="submit" class="btn btn-primary mb-2"href="/">Registrarse</button>
     </form>
 </div>
-</div>
+</div>-->
 <!--  footer -->
 <footer id="contact">
     <div class="footer">

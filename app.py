@@ -5,7 +5,7 @@ from .controller.AgregarEncargadoController import agregar_encargado
 from .controller.ConsultarEncargadoController import consultar_encargado
 from .controller.ActualizarEncargadoController import actualizar_encargado
 from .controller.EliminarEncargadoController import eliminar_encargado
-
+from .controller.RegistroController import registro_bp
 
 from .models.database import db
 
@@ -23,6 +23,6 @@ def create_app():
     app.register_blueprint(consultar_encargado)
     app.register_blueprint(actualizar_encargado)
     app.register_blueprint(eliminar_encargado)
-
+    app.register_blueprint(registro_bp)
 
     return app

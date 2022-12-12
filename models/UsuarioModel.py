@@ -90,3 +90,7 @@ def delete_usuario(usuario):
     except:
         db.session.rollback()
         return False
+
+def obten_usuario(email_arg):
+    ans = Usuario.query.filter(Usuario.correo == email_arg).first()
+    return ans
