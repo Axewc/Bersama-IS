@@ -1,0 +1,118 @@
+
+
+/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(slick.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+.titulo {
+	text-align: center;
+	padding-bottom: 15px;
+}
+h1{
+    color: purple;
+    text-align: center;
+}
+
+
+.contenedorRegistro{
+    background: rgb(233, 210, 210);
+    padding: 4em 4em 2em;
+    max-width: 400px;
+    margin: 50px auto 0;
+    border-radius: 34px;  
+    
+}
+
+
+label{
+    text-align: left;
+    font-size: 15px;
+}
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="email"],
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 10px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 5px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 5px;
+}   
+span{
+    color: red;
+}
+
+.centerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #8064A2 !important;
+    
+}
+
+.loader_bg {
+    position: fixed;
+    z-index: 9999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 280px;
+}
+
+/** footer **/
+
+.copyright {
+    margin-top: 90px;
+    padding: 20px 0px;
+    background-color: #FBFACD;
+}
+
+.copyright p {
+    color: #020203;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.copyright a {
+    color: #020203;
+}
+
+.copyright a:hover {
+    color: #7F669D;
+}
+
+
+/** end footer **/
+

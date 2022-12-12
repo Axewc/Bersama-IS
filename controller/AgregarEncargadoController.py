@@ -1,11 +1,11 @@
 import hashlib
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_wtf import FlaskForm
 
 
 from .AgregarEncargadoForm import AgregarEncargadoForm
-from ..models.UsuarioModel import insert_encargado
+from ..models.UsuarioModel import insert_usuario
 
 
 agregar_encargado = Blueprint('agregar_encargado', __name__)
@@ -26,24 +26,24 @@ def show():
     form = AgregarEncargadoForm()
     if form.validate_on_submit():
         nombre= form.nombre.data
-        form.nombre.data = ""
         apellidoPaterno= form.apellidoPaterno.data
-        form.apellidoPaterno.data = ""
         apellidoMaterno= form.apellidoMaterno.data
-        form.apellidoMaterno.data = ""
         correo= form.correo.data
-        form.correo.data = ""
         contrasena= form.contrasena.data
-        form.contrasena.data = ""
         confirmarContrasena= form.confirmarContrasena.data
-        form.confirmarContrasena.data = ""
         fechaNacimiento= form.fechaNacimiento.data
         idHostal= form.idHostal.data
         
         passhash = hashlib.sha256(contrasena.encode('utf-8')).hexdigest()
 
 
-        insert_encargado(nombre, apellidoPaterno, apellidoMaterno, correo, passhash, fechaNacimiento, idHostal)
+        if insert_usuario(nombre, apellidoPaterno, apellidoMaterno, correo, passhash, fechaNacimiento, tipo, idHostal):
+            flash("Encargado agregado a la base de datos satisfactoriamente")
+            return redirect(url_for('agregar_encargado.show'))
+        else:
+            flash("No se pudo actualizar la base de datos, intente mas tarde")
+
+
  
     return render_template("agregar_encargado.html",
                             nombre= nombre,

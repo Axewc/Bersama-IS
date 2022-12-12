@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class= container>
+    <h1> Actualizar un Encargado</h1>
+
+    <form method= "POST">
+        {{ form.csrf_token }}
+
+        {{ form.nombre.label(class= "form-label") }}
+        {{ form.nombre(class= "form-control", value= usuario.nombre) }}
+
+        {{ form.apellidoPaterno.label(class= "form-label")  }}
+        {{ form.apellidoPaterno(class= "form-control", value= usuario.apellidoPaterno) }}
+
+        {{ form.apellidoMaterno.label(class= "form-label")  }}
+        {{ form.apellidoMaterno(class= "form-control", value= usuario.apellidoMaterno) }}
+
+        {{ form.correo.label(class= "form-label")   }}
+        {{ form.correo(class= "form-control", value= usuario.correo) }}
+
+        {{ form.fechaNacimiento.label(class= "form-label")   }}
+        {{ form.fechaNacimiento(class= "form-control", value= usuario.fechaNacimiento) }}
+
+        {{ form.idHostal.label(class= "form-label")   }}
+        {{ form.idHostal(class= "form-control", value= usuario.idHostal) }}
+
+
+        <br>
+
+        {{ form.submit(class= "btn btn-primary") }}
+
+    </form>
+
+</div>
+
+{% endblock %}
