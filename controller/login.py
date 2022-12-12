@@ -44,24 +44,6 @@ def login():
 
 
 
-''''
-@loginBlueprint.route('/login', methods=['GET','POST'])
-def login():
-    if request.method == 'POST':
-        passwd = request.form['password']
-        mail = request.form['email']
-        if obten_usuario(mail) != None: #El usuario existe.
-            #return render_template("success.html")
-            #session.clear()
-            #session['user_id'] = usuario.mail
-            #g.user = usuario.mail
-            return redirect(url_for("login.success"))
-        else:
-            return redirect(url_for("login.failure"))
-    else: #Estamos haciendo un wget localhost:5000/login/
-        return render_template('login.html')
-'''
-
 @loginBlueprint.route('/success', methods=['GET'])
 def success():
     if session.get('user_id') != None:
