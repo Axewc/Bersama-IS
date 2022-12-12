@@ -33,7 +33,7 @@ def login():
             session['email'] = usuario.correo
             if usuario.tipo == "huesped":
                 return redirect(url_for('home.showHuesped'))
-            elif usuario.tipo == "encargado":
+            elif usuario.tipo == "administrador":
                 return redirect(url_for('home.showAdmin'))
             return redirect(url_for('home.show'))
 
