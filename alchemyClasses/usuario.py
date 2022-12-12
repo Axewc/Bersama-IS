@@ -1,4 +1,4 @@
-from alchemyClasses.__init__ import db
+from ..models.database import db
 
 class Usuario(db.Model):
     

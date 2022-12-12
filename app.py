@@ -26,8 +26,3 @@ def create_app():
 
 
     return app
-
-
-
-
->>>>>>> actualizar-encargado
