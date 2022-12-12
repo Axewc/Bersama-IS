@@ -605,6 +605,13 @@ button {
 
 /** footer **/
 
+.centerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
 .copyright {
      margin-top: 90px;
      padding: 20px 0px;
