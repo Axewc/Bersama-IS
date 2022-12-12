@@ -14,3 +14,12 @@ def show():
 @home.route("/index.html", methods=['GET', 'POST'])
 def showd():
     return render_template('index.html')
+
+@home.route("/huesped", methods=['GET', 'POST'])
+def showHuesped():
+    return render_template('huespedView.html')
+
+
+@home.route("/encargado", methods=['GET', 'POST'])
+def showAdmin():
+    return render_template('adminView.html')

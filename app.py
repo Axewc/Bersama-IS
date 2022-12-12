@@ -6,6 +6,8 @@ from .controller.ConsultarEncargadoController import consultar_encargado
 from .controller.ActualizarEncargadoController import actualizar_encargado
 from .controller.EliminarEncargadoController import eliminar_encargado
 from .controller.RegistroController import registro_bp
+from .controller.login import loginBlueprint
+from .controller.logout import logoutBlueprint
 
 from .models.database import db
 
@@ -24,5 +26,7 @@ def create_app():
     app.register_blueprint(actualizar_encargado)
     app.register_blueprint(eliminar_encargado)
     app.register_blueprint(registro_bp)
+    app.register_blueprint(loginBlueprint)
+    app.register_blueprint(logoutBlueprint)
 
     return app
