@@ -12,7 +12,7 @@ from .models.database import db
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "SECRET_KEY"
-    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:root@localhost:3306/Hoteland"
+    app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://root:Fer110675#01@localhost:3306/Hoteland"
     
     db.init_app(app)
     with app.app_context():
