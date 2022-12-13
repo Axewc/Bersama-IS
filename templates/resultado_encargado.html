@@ -15,13 +15,12 @@
 
             <thead>
                 <tr>
-                    <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido Paterno</th>
                     <th scope="col">Apellido Materno</th>
                     <th scope="col">Correo</th>
                     <th scope="col">Fecha de Nacimiento</th>
-                    <th scope="col">Id de Hostal Asignado</th>
+                    <th scope="col">Hostal Asignado</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                 </tr>
@@ -29,9 +28,6 @@
             <tbody>
                 {% for usuario in usuarios %}
                 <tr>
-                    <td>
-                        {{usuario.idUsuario }}
-                    </td>
                     <td>
                         {{usuario.nombre }}
                     </td>
@@ -58,9 +54,16 @@
                     </td>
                 </tr>
                 {% endfor %}
+                
             </tbody>
+
         </table>
+        
     </div>
 </div>
+<center>
+<a role="button" href="{{ url_for('home.showAdmin') }}" type="button"  class="btn btn-secondary">Volver</button>
+
+</center>
 
 {% endblock %}

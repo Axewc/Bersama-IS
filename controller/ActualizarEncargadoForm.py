@@ -10,7 +10,7 @@ class ActualizarEncargadoForm(FlaskForm):
     apellidoMaterno = StringField("Apellido Materno", validators=[InputRequired()])
     correo = EmailField("Correo Electronico", validators=[InputRequired()])
     fechaNacimiento = DateField("Fecha de Nacimiento", validators=[InputRequired()])
-    idHostal = IntegerField("id Hostal", validators=[InputRequired()])
+    idHostal = IntegerField("Hostal", validators=[InputRequired()])
     submit = SubmitField("Actualizar")
 
 

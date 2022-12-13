@@ -10,7 +10,7 @@ class ConsultarEncargadoForm(FlaskForm):
     apellidoMaterno = StringField("Apellido Materno", validators=[Optional()])
     correo = EmailField("Correo Electronico", validators=[Optional()])
     fechaNacimiento = DateField("Fecha de Nacimiento", validators=[Optional()])
-    idHostal = IntegerField("id Hostal", validators=[Optional()])
+    idHostal = IntegerField("Hostal", validators=[Optional()])
     submit = SubmitField("Buscar")
 
 

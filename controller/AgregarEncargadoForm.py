@@ -12,8 +12,10 @@ class AgregarEncargadoForm(FlaskForm):
     contrasena = PasswordField("Contraseña", validators=[InputRequired(), EqualTo("confirmarContrasena")])
     confirmarContrasena = PasswordField("Confirmar Contraseña", validators=[InputRequired(), EqualTo("contrasena")])
     fechaNacimiento = DateField("Fecha de Nacimiento", validators=[InputRequired()])
-    idHostal = IntegerField("id Hostal", validators=[InputRequired()])
+    idHostal = IntegerField("Hostal", validators=[InputRequired()])
     submit = SubmitField("Aceptar")
+    panel = SubmitField("panel")
+    
 
 
 

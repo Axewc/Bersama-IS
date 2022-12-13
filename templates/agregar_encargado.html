@@ -16,6 +16,7 @@
 
         {{ form.apellidoMaterno.label(class= "form-label")  }}
         {{ form.apellidoMaterno(class= "form-control") }}
+      <link rel="shortcut icon" href='static/images/logo.ico' />
 
         {{ form.correo.label(class= "form-label")   }}
         {{ form.correo(class= "form-control") }}
@@ -36,8 +37,10 @@
         <br>
 
         {{ form.submit(class= "btn btn-primary") }}
+        <a role="button" href="{{ url_for('home.showAdmin') }}" type="button" class="btn btn-secondary">Volver</button>
 
     </form>
+    
 
 </div>
 

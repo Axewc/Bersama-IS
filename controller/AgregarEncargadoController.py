@@ -40,6 +40,7 @@ def show():
         if insert_usuario(nombre, apellidoPaterno, apellidoMaterno, correo, passhash, fechaNacimiento, tipo, idHostal):
             flash("Encargado agregado a la base de datos satisfactoriamente")
             return redirect(url_for('agregar_encargado.show'))
+
         else:
             flash("No se pudo actualizar la base de datos, intente mas tarde")
 
@@ -54,4 +55,6 @@ def show():
                             fechaNacimiento= fechaNacimiento,
                             idHostal= idHostal,
                             form= form)
+    
+
  
