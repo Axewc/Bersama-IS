@@ -57,7 +57,7 @@ def select_usuario(nombre, apPaterno, apMaterno, correo, fechaNacimiento, tipo, 
     if not (idHostal is None or idHostal == ""):
         usuarios = [x for x in usuarios if x.idHostal == idHostal]
 
-        usuarios = [x for x in usuarios if x.tipo == tipo]
+    usuarios = [x for x in usuarios if x.tipo == tipo]
     
     return usuarios
 
